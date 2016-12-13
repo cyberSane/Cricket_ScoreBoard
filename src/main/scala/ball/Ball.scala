@@ -1,6 +1,9 @@
 package ball
 
 class Ball(value: String) {
+  def wicket: Int = {
+    if (isWicket) 1 else 0
+  }
 
   def isWicket: Boolean = {
     try {
@@ -25,5 +28,4 @@ class Ball(value: String) {
   def isOddRun: Boolean = {
     (runs % 2) != 0
   }
-
 }

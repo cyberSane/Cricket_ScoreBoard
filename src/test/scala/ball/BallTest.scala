@@ -3,23 +3,37 @@ package ball
 import org.scalatest.FunSuite
 
 class BallTest extends FunSuite {
-  test("should tell if it is a odd run ball") {
+  test("isOddRun should give true when run on the ball is odd") {
     val ballWith1Run = new Ball("1")
-    val ballWith2Runs = new Ball("2")
 
     assertResult(true)(ballWith1Run.isOddRun)
+  }
+
+  test("isOddRun should give false when run on the ball is even") {
+    val ballWith2Runs = new Ball("2")
+
     assertResult(false)(ballWith2Runs.isOddRun)
   }
 
-  test("should tell if it is a wicket ball") {
-    val ballWith1Run = new Ball("1")
+  test("isOddRun should give false when ball is a wicket ball") {
     val ballWithWicket = new Ball("W")
 
-    assertResult(false)(ballWith1Run.isWicket)
+    assertResult(false)(ballWithWicket.isOddRun)
+  }
+
+  test("isWicket should give true when ball is a wicket ball") {
+    val ballWithWicket = new Ball("W")
+
     assertResult(true)(ballWithWicket.isWicket)
   }
 
-  test("should return runs scored on that ball"){
+  test("isWicket should give false when ball is a run ball") {
+    val ballWith1Run = new Ball("1")
+
+    assertResult(false)(ballWith1Run.isWicket)
+  }
+
+  test("should return runs scored on that ball") {
     val ballWith1Run = new Ball("1")
     val ballWith6Runs = new Ball("6")
 

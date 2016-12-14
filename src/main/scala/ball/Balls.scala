@@ -2,7 +2,7 @@ package ball
 
 import java.util.Observable
 
-class Balls(balls: Array[Ball]) extends Observable {
+class Balls(balls: List[Ball]) extends Observable {
 
   def isLastBall(ball: Ball): Boolean = {
     (balls.indexOf(ball) + 1) % 6 == 0
@@ -17,5 +17,6 @@ class Balls(balls: Array[Ball]) extends Observable {
     }
     ball
   }
+
 
 }

@@ -13,7 +13,7 @@ class BallsTest extends FunSuite with BeforeAndAfter with MockitoSugar {
   val sixthBall: Ball = new Ball("3")
 
   before {
-    val ballsArray = Array(firstBall,
+    val ballsArray = List(firstBall,
       secondBall,
       thirdBall,
       fourthBall,

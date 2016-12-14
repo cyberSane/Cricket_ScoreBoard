@@ -1,8 +1,5 @@
 package ball
 
-import java.util.Observable
-
-import org.mockito.Mockito._
 import org.scalatest.mock.MockitoSugar
 import org.scalatest.{BeforeAndAfter, FunSuite}
 
@@ -27,7 +24,7 @@ class BallsTest extends FunSuite with BeforeAndAfter with MockitoSugar {
   }
   test("get should give the ball and notify nothing when ball is not the last ball of an over") {
     val expectedBall: Ball = thirdBall
-    
+
     assertResult(expectedBall)(balls.get(2))
   }
 }
